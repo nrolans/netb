@@ -1,0 +1,62 @@
+---
+# Store parameters
+# Multiple store types can be configured, but one is chosen in <type>
+store:
+  implementation: "filestore"
+  filestore:
+    directory: "data"
+
+# Allowed clients
+clients:
+  - hostname: "localhost"
+    additional_addresses:
+      - "127.0.0.1"
+    protocols:
+      http:
+        enabled: true
+      https:
+        enabled: true
+      scp:
+        enabled: true
+        public_key: "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDrQ3comIWVHSEjfXDz0Vg4JfCcmNajt7zWOivGsJbcDl3LQvJdTpB/miPZMtDxUIb+rI80sWJLtfOnL8VJlAS0akLR3rwzEWegur6NwhTVGLbm10Ub/hButg1VLhkwbCbvt7IULfdD9VobqeXqLrUlRJ4H3w7NRPZ7iLHBxHyY9jhgFI/a8sLNpTmIDRD642lQFO9gj/7UHwUjL35tTRMfN04mHJKnf27iF6tx/wMjr9aTFR15Yr39EOFoD9EMRqEltSdRQVB/ZdYG3dkv8ZyR/AmnGuyjQu0XRTSRUbWB01SMPU7CQ60JwnVC6O9rZ1iZNmD8u7P7Wb7IfWKuN7kt nrolans@nrmbp"
+
+# Configure enabled protocols
+protocols:
+  max_size: 100
+  http:
+    enabled: true
+    listener: ":2080"
+  https:
+    enabled: true
+    listener: ":2443"
+  scp:
+    enabled: true
+    listener: ":2022"
+    host_key: |
+      -----BEGIN RSA PRIVATE KEY-----
+      MIIEogIBAAKCAQEAqGHAonzI3HKOLeDnVk5OQQvEgfBY5gZvGd0eRVE+EsW0U8S5
+      6FFpt/mnyDopATH4uPNMoMbrXBO5ztiBe/EsSxrUbi/fn87xp6P/xB4MMZ30vjzM
+      9+X+beMaQaN00EEsHq8la3eilidPgS/Zj4YPIV2R3P+TZycQmaBUa0QW+9alCDi4
+      uAgQmR6zOBWlnx9JhfhOTtGFdOa41hVA5jLrER2KBpaJ4Ryeek70DXFZh1b/VUep
+      hW+0DXiaFRazjoExnwJEWQ1yh5uBA9DsegrHMaBRhWmaki6HxdZQesqbGLR/Sgoc
+      osPF+Jgxg66Y7JwuKFYGp6Ut51KVo1bjvY8GRQIDAQABAoIBADymaTKd6+Orx5ay
+      6eDmd71qNa/wGLVSH/aa9OpW5xrv55I8zBHoMUI5RLwUZuytST+lMza+L8yMtmLR
+      DWLNbfznfxjpWY1Ahz6xDdFgWVgN4zgawmGQkGKYaL63172jm/a5c6sP/ppDMpn/
+      2EegLBcCkyWdUUTYh1wuqfmxHu46vrUJYoyb/DirbvUdev98TBa0O6T0qCMWx8+E
+      VmwLulrBfzIJz8RV3RiZelmDTHzTp1E1SzR/l5xKw/PXduCx6dkGX4f68uYUmLg9
+      2Nm0BKU3o51z65YdpF0s7Z74dVyGJuNGGP24iso2ehMF2RAjZ7iUf+rWAGVaBPv8
+      qATUzsECgYEA1oRpAPYV/32s6Z99IR4+R9McFarr5GAmlLaZG30DUlFupoYHhsn3
+      T9xLepKEpHswlEJLXJnhopv7l7d46GQGLu7ZTXPHh5AwT/Wsu6BddIDjQ8loqsZg
+      l7RqOFO3C/56e8Z5wWjn75IwqAlY5SmFl41dJFT6iDghLxbYy5PzGdkCgYEAyPFt
+      usXB0hIZn8Xg5NZXwr7DpLSjUBh4nxO0vASWv0OOa5CZDm6wKzcRx3x36OfMDwPW
+      9/F9PGlJICN+v491MR1tx2RYmsUEnR/a/7qLF+YR1BgD4AyZW4Ir4pS3KJZydLeW
+      CT32jaVErdWw/fChgqxHJ93IhZdO9afIHsiKQE0CgYAoUc7irV5JHTgI2T9NoD+Y
+      hGd88xlPXXsi7IcukXq0WDXx+rMjdIaVbhSJv0xLFhR1aVh82Td9ts+9HnENTO+U
+      lrQlSKOyKTnLbaO/yE6IfUk6DnsrzgmNug1U9Pcsu/INnap43dzqPJIEo20f9YP0
+      jk95areELvidvy+UZASHUQKBgH2i9gihPN4rkvnirwplOdn5jDme971Mj55mo8oq
+      1FYh1xpJ/miXrG5YsDUaDZ8BzwRUUkQUKUlsStxdVRJQj+V1kP3qL7wVEx1qnXLn
+      H7CBmQQTP9kGB5y/dtDkSuCFsGppntWIeG93tck6or8jhNg+/v5eHNHqGORfUzBs
+      EoTBAoGAOfHfMnCpiUiLK7ZfNUJgT9KzMPqsSFJnc8xU0MoGFTzpM2ya7zwaA4Ey
+      Z2hb5iTKym5jonz0U/bTkVkhx5SjmurO5y8KhljYvRlagQfHd0xXmnKPVVy1Beao
+      NgGMY90e+XitTboq7iSYwCIcKX62dwT9JzOdCWID5YV5fRKwvAs=
+      -----END RSA PRIVATE KEY-----
